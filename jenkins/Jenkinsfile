@@ -10,11 +10,11 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                echo 'test'
+                echo 'tests running'
                 sh "printenv"
                 sh "env"
                 script {
-                    def apiDefs = findFiles(glob: 'api-*.json')
+                    def apiDefs = findFiles(glob: './../api-*.json')
 
                     apiDefs.each { apiDef ->
                         def pJson = readJSON file: env.WORKSPACE + "/" + apiDef.name
