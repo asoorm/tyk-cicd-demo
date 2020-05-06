@@ -31,7 +31,7 @@ pipeline {
             }
             steps {
                 echo "Deploying, because we are on ${env.BRANCH_NAME}"
-                sh env.TYK_SYNC_PATH + 'tyk-sync publish --dashboard="' + env.DASH_URL + ' --secret="' + env.DASH_SECRET + '" --path="./dump" --test
+                sh env.TYK_SYNC_PATH + 'tyk-sync publish --dashboard="' + env.DASH_URL + ' --secret="' + env.DASH_SECRET + '" --path="./dump" --test'
             }
         }
     }
