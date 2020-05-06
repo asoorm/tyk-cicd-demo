@@ -20,7 +20,7 @@ pipeline {
                     def apiDefs = findFiles(glob: '**/dump/api-*.json')
 
                     apiDefs.each { apiDef ->
-                        def pJson = readJSON file: env.WORKSPACE + "/" + apiDef.name
+                        def pJson = readJSON file: env.WORKSPACE + "/dump/" + apiDef.name
                         sh "echo Testing ${pJson.name}: ${pJson.api_id}"
 
                         assert pJson.use_keyless == false
