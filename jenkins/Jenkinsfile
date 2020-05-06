@@ -5,16 +5,16 @@ pipeline {
         TYK_DASH_URL = credentials('tyk-dash-url')
         TYK_ORG_ID = credentials('tyk-org-id')
         TYK_DASH_SECRET = credentials('tyk-dash-secret')
+        TYK_SYNC_PATH = credentials('tyk-sync-path')
     }
 
     stages {
         stage('test') {
             steps {
                 echo 'tests running'
-                sh "printenv"
-                sh "env"
+                sh "./gitops.sh sync_test"
                 script {
-                    def apiDefs = findFiles(glob: './../api-*.json')
+                    def apiDefs = findFiles(glob: './../dump/api-*.json')
 
                     apiDefs.each { apiDef ->
                         def pJson = readJSON file: env.WORKSPACE + "/" + apiDef.name
