@@ -51,21 +51,13 @@ pipeline {
 }
 
 def static assertAuthenticated(api) {
-    try {
-        assert api.use_keyless == false : "api " + api.name + " should have authentication enabled"
-    } catch (AssertionError e) {
-      	println "test failed: " + e.getMessage()
-    }
+    assert api.use_keyless == false : "api " + api.name + " should have authentication enabled"
 }
 
 def static assertWhitelistedTag(api) {
-    try {
-        assert api.tags.size() > 0 : "api ${api.name} all APIs should be tagged"
+    assert api.tags.size() > 0 : "api ${api.name} all APIs should be tagged"
 
-        api.tags.each { tag ->
-            assert ["edge"].contains(tag) : "api ${api.name} contains unknown tag ${tag}"
-        }
-    } catch (AssertionError e) {
-      	println "test failed: " + e.getMessage()
+    api.tags.each { tag ->
+        assert ["edge"].contains(tag) : "api ${api.name} contains unknown tag ${tag}"
     }
 }
