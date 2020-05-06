@@ -17,7 +17,7 @@ sync() {
 }
 
 sync_test() {
-  "${TYK_SYNC_PATH}"tyk-sync sync --dashboard="${DASH_URL}" --secret="${DASH_SECRET}" --path="./dump"
+  "${TYK_SYNC_PATH}"tyk-sync sync --dashboard="${DASH_URL}" --secret="${DASH_SECRET}" --path="./dump" --test
 }
 
 case $1 in
