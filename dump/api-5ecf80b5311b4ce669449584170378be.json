@@ -7,7 +7,7 @@
   "enable_proxy_protocol": false,
   "api_id": "5ecf80b5311b4ce669449584170378be",
   "org_id": "5d67b96d767e02015ea84a6f",
-  "use_keyless": true,
+  "use_keyless": false,
   "use_oauth2": false,
   "use_openid": false,
   "openid_options": {
@@ -84,7 +84,7 @@
   "client_certificates": [],
   "upstream_certificates": {},
   "pinned_public_keys": {},
-  "enable_jwt": false,
+  "enable_jwt": true,
   "use_standard_auth": false,
   "use_go_plugin_auth": false,
   "enable_coprocess_auth": false,
@@ -93,9 +93,7 @@
   "jwt_identity_base_field": "sub",
   "jwt_client_base_field": "",
   "jwt_policy_field_name": "pol",
-  "jwt_default_policies": [
-    "5eb2d800767e0247dcdaf48b"
-  ],
+  "jwt_default_policies": [],
   "jwt_issued_at_validation_skew": 0,
   "jwt_expires_at_validation_skew": 0,
   "jwt_not_before_validation_skew": 0,
