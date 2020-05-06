@@ -12,7 +12,7 @@ pipeline {
         stage('test') {
             steps {
                 echo 'tests running'
-                sh "${TYK_SYNC_PATH}"tyk-sync sync --dashboard="${DASH_URL}" --secret="${DASH_SECRET}" --path="./dump" --test
+                sh env.TYK_SYNC_PATH + 'tyk-sync sync --dashboard ' + env.DASH_URL + ' --secret ' + env.DASH_SECRET + ' --path "./dump" --test'
                 script {
                     def apiDefs = findFiles(glob: './../dump/api-*.json')
 
