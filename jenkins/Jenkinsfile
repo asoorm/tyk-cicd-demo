@@ -54,7 +54,7 @@ def static assertAuthenticated(api) {
     try {
         assert api.use_keyless == false : "api " + api.name + " should have authentication enabled"
     } catch (AssertionError e) {
-      	echo "test failed: " + e.getMessage()
+      	println "test failed: " + e.getMessage()
     }
 }
 
@@ -66,6 +66,6 @@ def static assertWhitelistedTag(api) {
             assert ["edge"].contains(tag) : "api ${api.name} contains unknown tag ${tag}"
         }
     } catch (AssertionError e) {
-      	echo "test failed: " + e.getMessage()
+      	println "test failed: " + e.getMessage()
     }
 }
