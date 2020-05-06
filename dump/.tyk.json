@@ -13,5 +13,10 @@
       "file": "api-52d4b0af5275462c6b09a39583fd142d.json",
       "oas": {}
     }
+  ],
+  "policies": [
+    {
+      "file": "policy-5eb2d800767e0247dcdaf48b.json"
+    }
   ]
 }
