@@ -5,6 +5,8 @@ pipeline {
         TYK_DASH_URL = credentials('tyk-dash-url')
         TYK_ORG_ID = credentials('tyk-org-id')
         TYK_DASH_SECRET = credentials('tyk-dash-secret')
+        TYK_PROD_DASH_URL = credentials('tyk-prod-dash-url')
+        TYK_PROD_DASH_SECRET = credentials('tyk-prod-dash-secret')
         TYK_SYNC_PATH = credentials('tyk-sync-path')
     }
 
@@ -32,6 +34,13 @@ pipeline {
             steps {
                 echo "Deploying, because we are on ${env.BRANCH_NAME}"
                 sh "${env.TYK_SYNC_PATH}tyk-sync sync --dashboard ${env.TYK_DASH_URL} --secret ${env.TYK_DASH_SECRET} --path ./dump"
+            }
+        }
+        stage('deploy-prod') {
+            when { tag pattern: '^release-*', comparator: "REGEXP" }
+            steps {
+                echo "Deploying to production because we have new tag"
+                sh "${env.TYK_SYNC_PATH}tyk-sync sync --dashboard ${env.TYK_PROD_DASH_URL} --secret ${env.TYK_PROD_DASH_SECRET} --path ./dump"
             }
         }
     }
