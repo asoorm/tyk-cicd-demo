@@ -37,7 +37,7 @@ pipeline {
             }
         }
         stage('deploy-prod') {
-            when { tag "release-*" }
+            when { tag pattern: '^release-*', comparator: "REGEXP" }
             steps {
                 echo "Deploying to production because we have new tag"
                 sh "${env.TYK_SYNC_PATH}tyk-sync sync --dashboard ${env.TYK_PROD_DASH_URL} --secret ${env.TYK_PROD_DASH_SECRET} --path ./dump"
