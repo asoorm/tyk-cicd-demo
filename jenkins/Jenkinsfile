@@ -31,12 +31,7 @@ pipeline {
             }
             steps {
                 echo "Deploying, because we are on ${env.BRANCH_NAME}"
-                sh "wget https://github.com/asoorm/tyk-git/releases/download/0.1-alpha/tyk-git"
-                sh "chmod +x tyk-git"
-                sh "./tyk-git -h"
-                sh "printenv"
-                sh "env"
-                // logic to pull credentials and use them to sync
+                sh env.TYK_SYNC_PATH + 'tyk-sync publish --dashboard="' + env.DASH_URL + ' --secret="' + env.DASH_SECRET + '" --path="./dump" --test'
             }
         }
     }
