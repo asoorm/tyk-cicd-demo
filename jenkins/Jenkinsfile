@@ -23,7 +23,11 @@ pipeline {
                         def pJson = readJSON file: env.WORKSPACE + "/dump/" + apiDef.name
                         sh "echo Testing ${pJson.name}: ${pJson.api_id}"
 
-                        assert pJson.use_keyless == false
+                        println "ensuring api is authenticated"
+                        assertAuthenticated(pJson)
+
+                        println "ensuring api has appropriate tags"
+                        assertWhitelistedTag(pJson)
                     }
                 }
             }
@@ -43,5 +47,17 @@ pipeline {
         always {
             deleteDir()
         }
+    }
+}
+
+def static assertAuthenticated(api) {
+    assert api.use_keyless == false : "api ${api.name} should have authentication enabled"
+}
+
+def static assertWhitelistedTag(api) {
+    assert api.tags.size() > 0 : "api ${api.name} all APIs should be tagged"
+
+    api.tags.each { tag ->
+        assert ["edge"].contains(tag) : "api ${api.name} contains unknown tag ${tag}"
     }
 }
