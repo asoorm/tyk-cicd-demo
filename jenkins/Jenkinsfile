@@ -33,7 +33,7 @@ pipeline {
             }
             steps {
                 echo "Deploying, because we are on ${env.BRANCH_NAME}"
-                sh "${env.TYK_SYNC_PATH}tyk-sync sync --dashboard ${env.TYK_DASH_URL} --secret ${env.TYK_DASH_SECRET} --path ./dump"
+                sh "${env.TYK_SYNC_PATH}tyk-sync sync --dashboard ${env.TYK_DASH_URL} --secret ${env.TYK_DASH_SECRET} --org ${env.TYK_ORG_ID} --path ./dump"
             }
         }
     }
