@@ -12,6 +12,7 @@ pipeline {
         stage('test') {
             steps {
                 echo 'tests running'
+                sh "ls -al"
                 sh "./gitops.sh sync_test"
                 script {
                     def apiDefs = findFiles(glob: './../dump/api-*.json')
