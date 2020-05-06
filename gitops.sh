@@ -16,6 +16,10 @@ sync() {
   "${TYK_SYNC_PATH}"tyk-sync sync --dashboard="${DASH_URL}" --secret="${DASH_SECRET}" --path="./dump"
 }
 
+sync_test() {
+  "${TYK_SYNC_PATH}"tyk-sync sync --dashboard="${DASH_URL}" --secret="${DASH_SECRET}" --path="./dump"
+}
+
 case $1 in
 dump)
   echo "pulling configurations from src dashboard"
