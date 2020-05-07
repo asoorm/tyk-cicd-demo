@@ -20,7 +20,7 @@ pipeline {
                     def manifest = readJSON file: env.WORKSPACE + "/dump/.tyk.json"
                     manifest.files.each { item ->
                         def pJson = readJSON file: env.WORKSPACE + "/dump/" + item.file
-                        sh "echo Testing ${pJson.name}: ${pJson.api_id}"
+                        println "Testing ${item.file}: ${pJson.name}"
 
 //                         println "ensuring api is authenticated"
 //                         assertAuthenticated(pJson)
