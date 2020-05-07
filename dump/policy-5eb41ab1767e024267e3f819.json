@@ -6,16 +6,7 @@
   "per": 60,
   "quota_max": -1,
   "quota_renewal_rate": -1,
-  "access_rights": {
-    "a66462fdbc45493b4ea084e173d95de8": {
-      "api_name": "httpbin.org",
-      "api_id": "a66462fdbc45493b4ea084e173d95de8",
-      "versions": [
-        "v1"
-      ],
-      "allowed_urls": []
-    }
-  },
+  "access_rights": {},
   "hmac_enabled": false,
   "active": true,
   "name": "foo",
