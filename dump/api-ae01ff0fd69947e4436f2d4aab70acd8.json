@@ -1,11 +1,11 @@
 {
-  "id": "5eb2d0a3767e027903217f53",
+  "id": "5eb41c7a767e024267e3f81a",
   "name": "trevorblades",
   "slug": "trevorblades",
   "listen_port": 0,
   "protocol": "",
   "enable_proxy_protocol": false,
-  "api_id": "52d4b0af5275462c6b09a39583fd142d",
+  "api_id": "ae01ff0fd69947e4436f2d4aab70acd8",
   "org_id": "5d67b96d767e02015ea84a6f",
   "use_keyless": false,
   "use_oauth2": false,
@@ -347,7 +347,9 @@
   "domain": "",
   "certificates": [],
   "do_not_track": false,
-  "tags": [],
+  "tags": [
+    "edge"
+  ],
   "enable_context_vars": false,
   "config_data": {},
   "tag_headers": [],
