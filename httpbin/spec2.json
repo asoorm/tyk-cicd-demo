@@ -466,14 +466,14 @@
     "/xml": {
       "get": {
         "produces": [
-          "application/xml"
+          "application/json"
         ],
         "responses": {
           "200": {
-            "description": "An XML document."
+            "description": "An XML -> JSON document."
           }
         },
-        "summary": "Returns a simple XML document.",
+        "summary": "Returns a simple JSON document.",
         "tags": [
           "Response formats"
         ]
