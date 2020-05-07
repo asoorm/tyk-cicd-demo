@@ -17,13 +17,12 @@ pipeline {
                 sh 'ls -al'
                 sh env.TYK_SYNC_PATH + 'tyk-sync sync --dashboard ' + env.TYK_DASH_URL + ' --secret ' + env.TYK_DASH_SECRET + ' --path="./dump" --test'
                 script {
-                    def apiDefs = findFiles(glob: '**/dump/api-*.json')
-
-                    apiDefs.each { apiDef ->
-                        def pJson = readJSON file: env.WORKSPACE + "/dump/" + apiDef.name
+                    def manifest = readJSON file: env.WORKSPACE + "/dump/.tyk.json"
+                    manifest.files.each { item ->
+                        def pJson = readJSON file: env.WORKSPACE + "/dump/" + item.file
                         sh "echo Testing ${pJson.name}: ${pJson.api_id}"
 
-                        println "ensuring api is authenticated"
+//                         println "ensuring api is authenticated"
 //                         assertAuthenticated(pJson)
 
                         println "ensuring api has appropriate tags"
