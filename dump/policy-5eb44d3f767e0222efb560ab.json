@@ -6,16 +6,7 @@
   "per": 60,
   "quota_max": -1,
   "quota_renewal_rate": -1,
-  "access_rights": {
-    "f88c735e90f84f51549c948b1c72fe72": {
-      "api_name": "bar",
-      "api_id": "f88c735e90f84f51549c948b1c72fe72",
-      "versions": [
-        "Default"
-      ],
-      "allowed_urls": []
-    }
-  },
+  "access_rights": {},
   "hmac_enabled": false,
   "active": true,
   "name": "asdf",
