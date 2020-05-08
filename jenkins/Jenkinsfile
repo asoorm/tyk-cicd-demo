@@ -5,6 +5,7 @@ pipeline {
         TYK_DASH_URL = credentials('tyk-dash-url')
         TYK_ORG_ID = credentials('tyk-org-id')
         TYK_DASH_SECRET = credentials('tyk-dash-secret')
+        TYK_SYNC_PATH = credentials('tyk-sync-path')
     }
 
     stages {
