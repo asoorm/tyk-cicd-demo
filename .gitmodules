@@ -1,0 +1,9 @@
+[submodule "helm/tyk-helm-chart"]
+	path = helm/tyk-helm-chart
+	url = git@github.com:TykTechnologies/tyk-helm-chart.git
+[submodule "tyk-helm-chart"]
+	path = tyk-helm-chart
+	url = git@github.com:TykTechnologies/tyk-helm-chart.git
+[submodule "istio/tyk-mixer-adapter"]
+	path = istio/tyk-mixer-adapter
+	url = git@github.com:joshblakeley/tyk-mixer-adapter.git

@@ -7,6 +7,8 @@
 ./nginx/nginx.conf
 playground
 worker-gw
+helm
+tyk-helm-chart
 
 # Test binary, built with `go test -c`
 *.test
