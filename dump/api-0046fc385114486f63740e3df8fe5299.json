@@ -227,6 +227,29 @@
         },
         "use_extended_paths": true,
         "extended_paths": {
+          "transform_response": [
+            {
+              "template_data": {
+                "input_type": "xml",
+                "template_mode": "blob",
+                "enable_session": false,
+                "template_source": "e3sgLiB8IGpzb25NYXJzaGFsIH19"
+              },
+              "path": "/xml",
+              "method": "GET"
+            }
+          ],
+          "transform_response_headers": [
+            {
+              "delete_headers": [],
+              "add_headers": {
+                "Content-Type": "application/json"
+              },
+              "path": "/xml",
+              "method": "GET",
+              "act_on": false
+            }
+          ],
           "track_endpoints": [
             {
               "path": "/anything/{anything}",
@@ -411,7 +434,16 @@
   "blacklisted_ips": [],
   "dont_set_quota_on_create": false,
   "expire_analytics_after": 0,
-  "response_processors": [],
+  "response_processors": [
+    {
+      "name": "header_injector",
+      "options": {}
+    },
+    {
+      "name": "response_body_transform",
+      "options": {}
+    }
+  ],
   "CORS": {
     "enable": false,
     "allowed_origins": [],
