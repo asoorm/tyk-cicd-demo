@@ -1,0 +1,32 @@
+{
+  "_id": "5eb54218767e0222efb560b0",
+  "id": "5eb54218767e0222efb560b0",
+  "org_id": "5d67b96d767e02015ea84a6f",
+  "rate": 1000,
+  "per": 60,
+  "quota_max": -1,
+  "quota_renewal_rate": -1,
+  "access_rights": {
+    "b8754e92ac8a477e74eb7cd3c9e341f1": {
+      "api_name": "httpbin.org",
+      "api_id": "b8754e92ac8a477e74eb7cd3c9e341f1",
+      "versions": [
+        "v1"
+      ],
+      "allowed_urls": []
+    }
+  },
+  "hmac_enabled": false,
+  "active": true,
+  "name": "Httpbin Monthly",
+  "is_inactive": false,
+  "date_created": "2020-05-08T12:27:20.267+01:00",
+  "tags": [],
+  "key_expires_in": 3600,
+  "partitions": {
+    "quota": true,
+    "rate_limit": true,
+    "acl": true
+  },
+  "last_updated": "1588937240"
+}
