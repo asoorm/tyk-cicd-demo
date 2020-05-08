@@ -216,6 +216,97 @@
         "ignore_endpoint_case": false,
         "global_size_limit": 0,
         "override_target": ""
+      },
+      "v2": {
+        "name": "v2",
+        "expires": "",
+        "paths": {
+          "ignored": [],
+          "white_list": [],
+          "black_list": []
+        },
+        "use_extended_paths": true,
+        "extended_paths": {
+          "track_endpoints": [
+            {
+              "path": "/anything/{anything}",
+              "method": "POST"
+            },
+            {
+              "path": "/anything/{anything}",
+              "method": "PATCH"
+            },
+            {
+              "path": "/anything/{anything}",
+              "method": "DELETE"
+            },
+            {
+              "path": "/anything/{anything}",
+              "method": "PUT"
+            },
+            {
+              "path": "/anything/{anything}",
+              "method": "GET"
+            },
+            {
+              "path": "/status/{codes}",
+              "method": "DELETE"
+            },
+            {
+              "path": "/status/{codes}",
+              "method": "PATCH"
+            },
+            {
+              "path": "/status/{codes}",
+              "method": "PUT"
+            },
+            {
+              "path": "/status/{codes}",
+              "method": "POST"
+            },
+            {
+              "path": "/status/{codes}",
+              "method": "GET"
+            },
+            {
+              "path": "/anything",
+              "method": "PUT"
+            },
+            {
+              "path": "/anything",
+              "method": "GET"
+            },
+            {
+              "path": "/anything",
+              "method": "POST"
+            },
+            {
+              "path": "/anything",
+              "method": "DELETE"
+            },
+            {
+              "path": "/anything",
+              "method": "PATCH"
+            },
+            {
+              "path": "/post",
+              "method": "POST"
+            },
+            {
+              "path": "/xml",
+              "method": "GET"
+            },
+            {
+              "path": "/put",
+              "method": "PUT"
+            }
+          ]
+        },
+        "global_headers": {},
+        "global_headers_remove": [],
+        "ignore_endpoint_case": false,
+        "global_size_limit": 0,
+        "override_target": "https://httpbin.org"
       }
     }
   },
