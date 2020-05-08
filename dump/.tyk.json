@@ -5,5 +5,10 @@
       "file": "api-0046fc385114486f63740e3df8fe5299.json",
       "oas": {}
     }
+  ],
+  "policies": [
+    {
+      "file": "policy-5eb564bc767e0222efb560b2.json"
+    }
   ]
 }
